@@ -6,8 +6,8 @@ public class SmartPhone {
 	private String os;
 	
 	SmartPhone(String company, String os){
-		this.company=company;
-		this.os=os;
+	this.company=company;
+	this.os=os;
 	}
 
 	@Override
