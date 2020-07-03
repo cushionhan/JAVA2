@@ -18,12 +18,12 @@ public class MyArrayTest1 {
 	public static void main(String[] args) {
 		
 		MyArr<String> myarray1=new MyArr<String>();
-		myarray1.add(new String("test"));
+		myarray1.add("test");
 		String str=myarray1.get(0);
 		System.out.println(str);
 		
 		MyArr<Integer> myarray2=new MyArr<Integer>();
-		myarray2.add(new Integer(123));
+		myarray2.add(123);
 		Integer ing=myarray2.get(0);
 		System.out.println(ing);
 	}
