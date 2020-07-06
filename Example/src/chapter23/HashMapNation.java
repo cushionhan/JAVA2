@@ -27,7 +27,7 @@ public class HashMapNation {
 				break;
 			
 			Integer n=nations.get(nation);
-			if(n==null)  
+			if(n == null)  
 				System.out.println(nation+"나라는 없습니다.");
 			else
 				System.out.println(nation+ "의 인구는 "+n);	
