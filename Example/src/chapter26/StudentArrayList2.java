@@ -1,14 +1,16 @@
 package chapter26;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.StringTokenizer;
 
-public class StudentArrayList {
+public class StudentArrayList2 {
 
 	public static void main(String[] args) {
 		Student []student=new Student[4];
-		ArrayList<Student> arrayList=new ArrayList<Student>();
+		HashMap<String,Student> hashMap=new HashMap<String,Student>();
 		@SuppressWarnings("resource")
 		Scanner sc =new Scanner(System.in);
 		System.out.println("학생이름, 학과, 학번, 학점평균 입력하세요");
@@ -27,13 +29,15 @@ public class StudentArrayList {
 			String number=st.nextToken().trim();
 			Double grade=Double.parseDouble(st.nextToken().trim());
 			student[i] = new Student(name, department, number, grade);
-			arrayList.add(student[i]);
+			hashMap.put(name, student[i]);
 			
 			}
-		
-		for(int i=0;i<arrayList.size();i++) {
+		Set<String> key=hashMap.keySet();
+		Iterator<String> it=key.iterator();
+		while(it.hasNext()) {
+			String name=it.next();
 			System.out.println("--------------------------------");
-			Student s=arrayList.get(i);
+			Student s=hashMap.get(name);
 			System.out.println("이름: "+s.getName());
 			System.out.println("학과: "+s.getMajor());
 			System.out.println("학번: "+s.getStudentId());
@@ -45,23 +49,10 @@ public class StudentArrayList {
 			String name = sc.next();
 			if(name.equals("그만"))
 				break;
-			for(int i=0;i<arrayList.size();i++) {
-				Student s=arrayList.get(i);
-				s.find_student(name);
-			}
+			Student s=hashMap.get(name);
+			s.find_student(name);
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		sc.close();
 	}
 
 }
