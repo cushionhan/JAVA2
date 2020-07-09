@@ -25,6 +25,7 @@ public class ArrayListStream {
 		//for(String str:sList) {
 		//System.out.println(str);
 		//}
+		//sorted filter map reduce
 	}
 
 }
